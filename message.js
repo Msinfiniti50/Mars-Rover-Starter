@@ -1,5 +1,16 @@
+const Command = require('./command.js');
 class Message {
-   // Write code here!
+ constructor (name, commands) {
+   this.name = name;
+   if (!name) {
+     throw Error("Name required.");
+   }
+   this.commands = commands;
+ }
 }
+let commands = [
+ new Command('MODE_CHANGE', 'LOW_POWER'),
+ new Command('STATUS_CHECK')
+];
 
-module.exports = Message;
+module.exports = Message,commands;
